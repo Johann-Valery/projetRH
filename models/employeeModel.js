@@ -36,8 +36,6 @@ const employeeSchema = mongoose.Schema({
     employeereprimand: {
         type: Number,
         default: 0,
-        min: [0, 'Le nombre de blâmes doit être entre 0 et 3.'],
-        max: [3, 'Le nombre de blâmes doit être entre 0 et 3.']
     },
 
 });
