@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+{% block main %}
+
+	<h1>Page d'édition de l'employé identifiant {{employee.employeeidentificator}}</h1>
+
+<form action="/editemployee/{{ employee._id }}" method="post" enctype="multipart/form-data">
+
+    <label for="employeename">Nom de l'employé :</label>
+    <input type="text" id="employeename" name="employeename" value="{{ employee.employeename }}">
+
+    <label for="employeefirstname">Prénom de l'employé :</label>
+    <input type="text" id="employeefirstname" name="employeefirstname" value="{{ employee.employeefirstname }}">
+
+    <label for="employeeidentificator">Identifiant de l'employé :</label>
+    <input type="text" id="employeeidentificator" name="employeeidentificator" value="{{ employee.employeeidentificator }}">
+
+    <label for="employeefunction">Fonction de l'employé :</label>
+    <input type="text" id="employeefunction" name="employeefunction" value="{{ employee.employeefunction }}">
+
+    <label for="employeepicture">Photo de l'employé:</label><br>
+    <input type="file" id="employeepicture" name="employeepicture" value="{{ employes.photo }}"> <br>
+
+    <label for="employeereprimand">Nombre de blâmes :</label><br>
+    <input type="number" id="employeereprimand" name="employeereprimand" value="{{ employee.employeereprimand }}">
+
+    <input type="submit" value="Valider modifications">
+</form>
+{% if errors %}
+    <div class="alert alert-danger">
+	<p>Une ou plusieurs erreurs sont survenues : </p>
+        {% for error in errors %}
+            <p>{{ error }}</p>
+        {% endfor %}
+    </div>
+{% endif %}
+{% endblock %}

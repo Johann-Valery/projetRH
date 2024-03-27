@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+{% block main %}
+<h1>Formulaire de login</h1>
+	<form action="/login" method="post">
+
+		<label for="mail">Adresse mail:</label>
+		<input type="text" id="mail" name="mail">
+
+		<label for="password">Mot de passe:</label>
+		<input type="password" id="password" name="password">
+
+		<input type="submit" value="Se connecter">
+	</form>
+	{% if errors %}
+    <div class="alert alert-danger">
+	<p>Une erreur est survenue : </p>
+        {% if errors %}
+            <p>{{ errors[0] }}</p>
+        {% endif %}
+    </div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+{% block main %}
+	<h1>Page de gestion des employés</h1>
+	<form action="/searchemployee" id="searchemployee" method="get">
+		<input type="text" name="searchbar" placeholder="Entrez le nom de l'employé">
+		<button type="submit">Rechercher</button>
+	</form>
+	<article>
+		<h2>Vos employés</h2>
+		<section id="displayemployees">
+
+			{% for employee in company.employeecollection %}
+				<li class="singleemployeedisplay">
+					<p class="employeename">Nom :
+						{{ employee.employeename }}</p>
+					<p class="employeefirstname">Prenom :
+						{{ employee.employeefirstname }}</p>
+					<p class="employeeidentificator">Identifiant unique :
+						{{ employee.employeeidentificator}}</p>
+					<p class="employeefunction">Fonction :
+						{{ employee.employeefunction }}</p>
+					<p class="employeepicture">
+						<img src="{{ employee.employeepicture }}" alt="Employee Picture"></p>
+					<p class="employeereprimand">Blâmes :
+						{{ employee.employeereprimand }}</p>
+					<div class="employeebuttonscontainer">
+						<button onclick="location.href='/accessediteemployee/{{employee.id}}'">Modifier employé</button>
+						<button onclick="location.href='/deleteemployee/{{employee.id}}'; return confirmDelete();">Supprimer employé</button>
+						<button onclick="location.href='/addreprimand/{{employee.id}}'; return {{employee.employeereprimand >= 2 ? 'confirmReprimandAndDelete()' : 'true' }};">Ajouter un blâme</button>
+					</div>
+				</li>
+
+			{% endfor %}
+		</section>
+	</article>
+
+	<button onclick="location.href='/create'" id="createemployeebutton">Enregistrer un nouvel employé</button>
+
+	<script>
+		function confirmDelete() {
+return confirm("Êtes vous sûr de vouloir supprimer cet employé ?");
+}
+
+function confirmReprimandAndDelete(){
+	return confirm("L'employé va recevoir son 3ème blâme et être supprimé. Voulez-vous continuer ?");
+}
+	</script>
+{% endblock %}

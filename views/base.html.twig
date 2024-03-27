@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		{% block style %}
+		<link rel="stylesheet" href="../public/assets/css/style.css">
+		{% endblock %}
+		{% block title %}{% endblock %}
+	</head>
+	<body>
+		{% block header %}
+        {% include "./layouts/_header.html.twig" %}{% endblock %}
+<main>
+		{% block main %}{% endblock %}
+</main>
+
+		{% block footer %}{% include "./layouts/_footer.html.twig" %}{% endblock %}
+
+		{% block scripts %}{% endblock %}
+	</body>
+</html>

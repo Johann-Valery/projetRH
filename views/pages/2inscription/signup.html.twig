@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+{% block main %}
+
+
+	<h1>Formulaire d'inscription</h1>
+
+	<form action="/signup" method="post">
+		<label for="companyname">Nom de l'entreprise:</label>
+		<input type="text" id="companyname" name="companyname">
+
+		<label for="siret">Numéro de SIRET:</label>
+		<input type="text" id="siret" name="siret">
+
+		<label for="mail">Adresse mail:</label>
+		<input type="text" id="mail" name="mail">
+
+		<label for="password">Mot de passe:</label>
+		<input type="password" id="password" name="password">
+
+		<label for="passwordconfirm">Mot de passe:</label>
+		<input type="password" id="passwordconfirm" name="passwordconfirm">
+
+		<label for="managername">Nom du responsable ou directeur:</label>
+		<input type="text" id="managername" name="managername">
+
+		<input type="submit" value="S'inscrire">
+	</form>
+{% if errors %}
+    <div class="alert alert-danger">
+	<p>Une ou plusieurs erreurs sont survenues : </p>
+        {% for error in errors %}
+            <p>{{ error }}</p>
+        {% endfor %}
+    </div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,19 @@
+		{% block style %}
+		<link rel="stylesheet" href="../../public/assets/css/headerfooter.css">
+		{% endblock %}
+<header>
+<div id="headericon">
+<a href="/">
+    <img src="../../public/assets/images/mainlogo.png" alt="Logo du site">
+</a>
+</div>
+<div id="headerbuttons">
+{% if company.id %}
+    <button onclick="location.href='/dashboard'">Dashboard</button>
+    <button onclick="location.href='/logout'">Se déconnecter</button>
+{% else %}
+    <button onclick="location.href='/signup'">Inscription</button>
+    <button onclick="location.href='/login'">Se connecter</button>
+{% endif %}
+</div>
+</header>

@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+{% block style %}
+	<link rel="stylesheet" href="../../../public/assets/css/indexstyle.css">
+{% endblock %}
+{% block main %}
+	<h1>Bienvenue sur votre logiciel de gestion RH</h1>
+
+	<img src="../../public/assets/images/mainlogo.png" alt="Logo du site">
+
+	<div id="indexbuttons">
+		<button onclick="location.href='/signup'">Inscription</button>
+		<button onclick="location.href='/login'">Connexion</button>
+	</div>
+{% endblock %}

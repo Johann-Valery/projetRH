@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+{% block main %}
+	<h1>Page de creation d'employé</h1>
+
+	<form action="/createemployee" method="post" enctype="multipart/form-data">
+
+		<label for="employeename">Nom de l'employé :</label>
+		<input type="text" id="employeename" name="employeename">
+
+		<label for="employeefirstname">Prénom de l'employé :</label>
+		<input type="text" id="employeefirstname" name="employeefirstname">
+
+		<label for="employeeidentificator">Identifiant de l'employé :</label>
+		<input type="text" id="employeeidentificator" name="employeeidentificator">
+
+		<label for="employeefunction">Fonction de l'employé :</label>
+		<input type="text" id="employeefunction" name="employeefunction">
+
+		<label for="employeepicture">Photo de l'employé:</label><br>
+		<input type="file" id="employeepicture" name="employeepicture" value="{{ employes.photo }}"><br>
+
+		<label for="employeereprimand">Nombre de blâmes :</label><br>
+		<input type="number" id="employeereprimand" name="employeereprimand">
+
+		<input type="submit" value="Submit">
+	</form>
+{% if errors %}
+    <div class="alert alert-danger">
+	<p>Une ou plusieurs erreurs sont survenues : </p>
+        {% for error in errors %}
+            <p>{{ error }}</p>
+        {% endfor %}
+    </div>
+{% endif %}
+{% endblock %}

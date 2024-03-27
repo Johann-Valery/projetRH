@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+main {
+    display: flex;
+    flex-direction : column;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input[type="text"], form input[type="number"], form input[type="file"], form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+form input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+#searchemployee{
+    width : 30%
+}
+
+#createemployeebutton{
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 30%;
+    margin-top: 2%
+}
+
+article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#displayemployees {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+}
+
+.singleemployeedisplay {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    align-items: center;
+}
+
+.singleemployeedisplay img{
+    height: 100px;
+    width: 100px
+}
+
+.employeebuttonscontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 20px;
+}
